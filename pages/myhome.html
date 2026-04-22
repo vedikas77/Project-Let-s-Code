@@ -1,0 +1,131 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Let's Code | Home</title>
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f4f6f5;
+}
+header{
+    background:#3b5d3b;
+    color:white;
+    padding:40px 20px;
+    text-align:center;
+}
+header h1{margin:0;font-size:36px;}
+header p{margin-top:8px;opacity:0.9;}nav{ background:#2f4f2f; display:flex; justify-content:center; gap:30px; padding:12px; } nav a{ color:white; text-decoration:none; font-weight:bold; } nav a:hover{text-decoration:underline;}
+
+.container{ max-width:1100px; margin:40px auto; padding:0 20px; }
+
+.grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:25px; }
+.nav-links a.active{
+    background: white;
+    color: #556b2f;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.card{ background:white; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); overflow:hidden; text-align:center; } .card img{ width:100%; height:140px; object-fit:cover; } .card h3{margin:15px 0 5px;} .card p{color:#666;font-size:14px;} .card button{ margin:15px 0 20px; padding:10px 18px; border:none; border-radius:20px; background:#3b5d3b; color:white; cursor:pointer; } .card button:hover{background:#2f4f2f;}
+
+footer{ background:#2f4f2f; color:white; text-align:center; padding:15px; margin-top:40px; } </style>
+
+</head>
+<body><header>
+    <h1>Let's Code</h1>
+    <p>An investment in knowledge pays the best interest</p>
+</header>
+<nav>
+   
+    
+     <a href="help.html" > Help</a>
+     <a href="dashboard.php" >Dashboard</a>
+     <a href="about.html" > About</a>
+     
+     
+    
+    </div>
+</nav><div class="container">
+    <h2>Popular Languages</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="py.png">
+            <h3>Python</h3>
+            <p>Beginner to Advanced</p>
+        <button onclick="enrollNow('python', 'python.html')"lnohp>View Course</button>
+  
+    </div>
+
+        <div class="card">
+            <img src="c.png">
+            <h3>pwc</h3>
+            <p>Strong OOP Concepts</p>
+         <button onclick="enrollNow('c', 'c.html')"lnohp>View Course</button>
+        </div>
+
+        <div class="card">
+            <img src="hc.png">
+            <h3>HTML & CSS</h3>
+            <p>Web Design Basics</p>
+        <button onclick="enrollNow('Html&css', 'htmlcss.html')"lnohp>View Course</button>
+
+        </div>
+        
+        <div class="card">
+            <img src="java.png">
+            <h3>Core Java</h3>
+            <p>Strong OOP Concepts</p>
+            <button onclick="enrollNow('Core Java', 'cj.html')">View Course</button>
+        </div>
+
+        <div class="card">
+            <img src="js.png">
+            <h3>javascript</h3>
+            <p>Web Design Basics</p>
+            <button onclick="enrollNow('HTML&CSS', 'javascript.html')">View Course</button>
+        </div>
+
+<script>
+function enrollNow(courseName, nextUrl) {
+    // We create a temporary form and submit it immediately
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = 'home.php';
+
+    const courseInput = document.createElement('input');
+    courseInput.type = 'hidden';
+    courseInput.name = 'course_name';
+    courseInput.value = courseName;
+    form.appendChild(courseInput);
+
+    const redirectInput = document.createElement('input');
+    redirectInput.type = 'hidden';
+    redirectInput.name = 'redirect_to';
+    redirectInput.value = nextUrl;
+    form.appendChild(redirectInput);
+
+    document.body.appendChild(form);
+    form.submit();
+}
+</script>
+</div><footer>
+    © 2026 Let's Code. All Rights Reserved.
+</footer>
+
+<form id="enrollForm" action="home.php" method="POST" style="display:none;">
+        <input type="hidden" name="course_name" id="course_input">
+        <input type="hidden" name="redirect_to" id="redirect_input">
+    </form>
+
+    <script>
+    function enroll(name, url) {
+        document.getElementById('course_input').value = name;
+        document.getElementById('redirect_input').value = url;
+        document.getElementById('enrollForm').submit();
+    }
+    </script></body>
+</html>
