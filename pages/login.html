@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Let's Code</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    background: #f2f5e9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    display: flex;
+    width: 750px;
+    height: 420px;
+    background: #e5ead6;
+    border-radius: 14px;
+    box-shadow: 0 0 20px rgba(126, 150, 107, 0.6);
+    overflow: hidden;
+}
+.welcome-section {
+    width: 45%;
+    background: linear-gradient(150deg, #c9d6b5, #9fb48c);
+    padding: 40px 30px;
+    color: #364732;
+    clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%);
+}
+
+.welcome-section h1 {
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.welcome-section p {
+    opacity: 0.8;
+    font-size: 14px;
+}
+
+/* Right Form Section */
+.form-section {
+    width: 55%;
+    background: #fafcf5;
+    padding: 40px;
+    color: #3e5135;
+}
+
+.form-section h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+/* Input Group */
+.input-group {
+    margin-bottom: 18px;
+    position: relative;
+}
+
+.input-group label {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.input-group input {
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px 35px 10px 10px;
+    border: none;
+    border-bottom: 2px solid #9fb48c;
+    background: transparent;
+    color: #3e5135;
+    font-size: 15px;
+}
+
+.input-group input:focus {
+    border-bottom-color: #7e9b66;
+    outline: none;
+}
+
+.input-group .icon {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    opacity: 0.6;
+}
+
+/* Forgot Password Link */
+.forgot-pass {
+    text-align: right;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+.forgot-pass a {
+    font-size: 12px;
+    color: #7a8f65;
+    text-decoration: none;
+}
+
+.forgot-pass a:hover {
+    text-decoration: underline;
+}
+
+/* Button */
+.btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: linear-gradient(135deg, #b8c9a3, #8ea87a);
+    color: #25301f;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 30px;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    transform: scale(1.03);
+}
+
+/* Text */
+.login-text {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.login-text a {
+    color: #7a8f65;
+    text-decoration: none;
+}
+
+.login-text a:hover {
+    text-decoration: underline;
+}
+
+/* Dark Mode Styles */
+body.dark {
+    background-color: #1e1e1e;
+    color: #eaeaea;
+}
+
+body.dark .container {
+    background-color: #2a2a2a;
+}
+
+body.dark .form-section {
+    background-color: #333;
+}
+
+body.dark .form-section h2 {
+    color: #eaeaea;
+}
+
+body.dark input {
+    background-color: transparent;
+    color: #eaeaea;
+    border-bottom-color: #666;
+}
+
+body.dark .btn {
+    background: #555;
+    color: #fff;
+}
+
+body.dark .forgot-pass a, 
+body.dark .login-text a {
+    color: #9fb48c;
+}
+
+.input-group span {
+    font-size: 18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="welcome-section">
+        <h1>LET'S CODE !</h1>
+        <p><b>"A challenge a day keeps the bugs away."</b></p>
+    </div>
+
+    <div class="form-section">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h2>Login</h2>
+            <button onclick="toggleDarkMode()" style="padding:5px 10px; cursor:pointer; border-radius: 5px; border: 1px solid #ccc; background: transparent;">🌙 Dark</button>
+        </div>
+
+        <form action="login.php" method="POST">
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" name="username" required>
+                <span class="icon">👤</span>
+            </div>
+
+            <div class="input-group" style="position:relative;">
+                <label>Password</label>
+                <input type="password" id="password" name="password" required>
+                <span id="togglePassword" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); cursor:pointer;">🙈</span>
+            </div>
+
+            <div class="forgot-pass">
+                <a href="forget.php">Forgot password?</a>
+            </div>
+
+            <button class="btn" type="submit">Login</button>
+        </form>
+
+        <p class="login-text">
+            Create new account? <a href="register.html">Register</a>
+        </p>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+
+    togglePassword.addEventListener('click', () => {
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        togglePassword.textContent = type === 'password' ? '🙈' : '👁️';
+    });
+});
+
+function toggleDarkMode() {
+    document.body.classList.toggle("dark");
+    localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+}
+
+// Load theme on page load
+if(localStorage.getItem('theme') === 'dark'){
+    document.body.classList.add('dark');
+}
+</script>
+
+</body>
+</html>
