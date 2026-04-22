@@ -1,2 +1,19 @@
-# Project-Let-s-Code
-Let's Code is a web-based coding platform developed using PHP, HTML, and JavaScript that enables users to learn, write, and execute code in different programming languages through an interactive interface.
+# LETSCODE
+
+LETSCODE is a web-based coding platform that allows users to practice and execute code online.
+
+## Features
+- User authentication (login/register)
+- Code execution system
+- Multiple programming languages support
+- Simple and interactive UI
+
+## Technologies Used
+- PHP
+- HTML/CSS
+- JavaScript
+
+## How to Run
+- Install XAMPP or any PHP server
+- Place project in htdocs
+- Run on localhost
