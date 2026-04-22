@@ -1,0 +1,339 @@
+help.html
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Help | Let's Code</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #e8efe9;
+    color: #1f3d2b;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: #5f8f6d;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+}
+
+.navbar h2 {
+    font-weight: 600;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+}
+
+.nav-links a.active {
+    border-bottom: 2px solid white;
+}
+
+/* HEADER */
+.page-header {
+    text-align: center;
+    padding: 20px 0 20px;
+}
+
+.page-header h3{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+/* LAYOUT */
+.container {
+    display: flex;
+    height: 90vh;
+    padding: 5px 20px 20px;
+    gap: 20px;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 25%;
+    background-color: #b7d4bf;
+    border-radius: 15px;
+    padding: 20px;
+    overflow-y: auto;
+    
+}
+
+.sidebar button {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 12px;
+    background-color: #eaf3ec;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.sidebar button:hover {
+    background-color: #5f8f6d;
+    color: white;
+}
+
+.sidebar button.active {
+    background-color: #5f8f6d;
+    color: white;
+}
+
+/* CONTENT */
+.content {
+    width: 75%;
+    background-color: #f4f6f4;
+    border-radius: 15px;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    
+    margin-bottom: 15px;
+    font-size: 26px;
+    text-align: center;
+}
+
+section p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+li {margin-bottom: 8px;
+}
+/* FAQ ACCORDION */
+.faq-item {
+    margin-bottom: 10px;
+}
+.faq-question {
+    background-color: #dce8df;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+}
+.faq-answer {
+    display: none;
+    padding: 10px 15px;
+    background-color: #f4f6f4;
+}
+/* CONTACT BOX */
+.contact-box {
+    background-color: #dce8df;
+    padding: 20px;
+    border-radius: 12px;
+}
+html {
+    scroll-behavior: smooth;
+}
+</style>
+</head>
+<body>
+<!-- NAVBAR -->
+<div class="navbar">
+    <h2>Let's Code</h2>
+    <div class="nav-links">
+        <a href="#">About</a>
+        <a href="#" class="active">Help</a>
+        <a href="#">Contact</a>
+    </div>
+</div>
+<!-- HEADER -->
+<div class="page-header">
+    <h1>Help & Support</h1>
+</div>
+<!-- MAIN LAYOUT -->
+<div class="container">
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <button onclick="scrollToSection('getting')">Getting Started</button>
+        <button onclick="scrollToSection('rapid')">Rapid Fire Mode</button>
+        <button onclick="scrollToSection('coding')">Coding Challenges</button>
+        <button onclick="scrollToSection('scoring')">Scoring & Results</button>
+        <button onclick="scrollToSection('account')">Account & Profile</button>
+        <button onclick="scrollToSection('trouble')">Troubleshooting</button>
+        <button onclick="scrollToSection('faq')">FAQ</button>
+        <button onclick="scrollToSection('contact')">Contact Support</button>
+    </div>
+    <!-- CONTENT -->
+    <div class="content">
+        <section id="getting">
+            <h2>Getting Started</h2>
+            <p>Let’s Code allows you to practice coding through Rapid Fire questions and full coding challenges.</p>
+            <p><b>1.Difficulty Levels:</b><br>
+            All topics across each programming language are organized in ascending order, beginning with basic concepts and progressing to advanced subtopics.<br>
+            Users may follow the structured order for guided learning or select any topic of their choice to begin practicing.<br>This flexible approach allows 
+            learners to either build foundational knowledge step by step or focus on specific areas of interest.</p>
+        </section><hr><br>
+        <section id="rapid">
+            <h2>Rapid Fire Mode</h2>
+            <p>Timed conceptual or MCQ-based questions to test your speed and accuracy.</p><br>
+            <p><b>2.Rapid Fire Rules:</b><br>
+            <b>!</b> Each topic within a selected programming language includes a Rapid Fire practice option.<br>
+            <b>!</b> The Rapid Fire session consists of five questions per topic.<br>
+            <b>!</b> Each session is conducted within a specified time limit [30 seconds].<br>
+            <b>!</b> Users must answer all five questions within the allotted time for the score to be considered valid.<br>
+            <b>!</b> If all five questions are not completed within the time limit, the score will not be recorded.<br>
+            <b>!</b> Upon successfully answering all five questions, the final score will be displayed immediately.<br>
+            [This feature is designed to improve speed, accuracy, and conceptual understanding under timed conditions.]
+             </p>
+        </section>
+<hr><br>
+        <section id="coding">
+            <h2>Coding Challenges</h2>
+            <p>Write code in the built-in editor and submit solutions evaluated against test cases.</p>
+            <p><b>3.Coding Rules: </b><br>
+<b>!</b> Each topic includes a Coding Practice section containing two coding questions.<br>
+<b>Submission policy:</b>
+<b>!</b> Users are allowed a total of four submission attempts per visit for each topic.<br>
+<b>!</b> During the first two attempts, users are expected to solve the problem independently.<br>
+<b>!</b> If the correct solution is not achieved after the first two attempts, a hint or reference solution will be provided via a pop-up window.<br>
+<b>!</b> After reviewing the hint, users will receive two additional submission attempts to solve the problem independently.<br>
+<b>!</b> If the solution remains incorrect after all four attempts, the user will be redirected to the topic page to review the learning material before attempting again.<br>
+[This structure encourages independent problem-solving while still providing guided support when necessary.]
+            </p>
+        </section>
+<hr><br>
+        <section id="scoring">
+            <h2>Scoring & Results</h2>
+            <p>Your performance is based on accuracy, speed, and difficulty level.</p>
+        </section>
+<hr><br>
+        <section id="account">
+            <h2>Account & Profile</h2>
+            <b>Account Security & Access</b>
+Password Management<br>
+Update Your Credentials: You can change your password at any time through the Profile Settings menu to keep your account secure.<br>
+Stay Unique: We strongly recommend using a unique password that you don't use on other sites to ensure your personal progress and streak data stay safe.<br>
+Session Management<br>
+Automatic Login: Our dashboard uses PHP Sessions to remember who you are while you move between pages.<br>
+Identifying "User": If your dashboard displays "Welcome, User" instead of your actual name, your session may have expired. Simply log out and log back in to re-authenticate and see your personalized stats.<br>
+Account Recovery<br>
+Lost Access?: If you are unable to log in, please use the "Forgot Password" link on the login page.<br>
+Restore Your Data: Once you verify your identity, the system will automatically reconnect you to your existing user_id, restoring your full history of solved questions and your current learning streak.<br>
+        </section>
+<hr><br>
+        <section id="trouble">
+            <h2>Troubleshooting</h2>
+            <p><strong>Editor not running?</strong> Refresh the page or check internet connection.</p>
+            <p><strong>Wrong Answer?</strong> Check edge cases and formatting.</p>
+        </section>
+<hr><br>
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)"> Is Let’s Code free?</div>
+                <div class="faq-answer">Yes, basic practice is free.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">Can I retake questions?</div>
+                <div class="faq-answer">Yes, you can practice again anytime.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)"> How are topics organized on the platform?</div>
+                <div class="faq-answer">All topics across each programming language are arranged in ascending order, starting from basic concepts and progressing to advanced subtopics.
+However, users are free to choose any topic and begin practicing at any time.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">Do I have to complete topics in order?</div>
+                <div class="faq-answer">No. While the topics are structured progressively for better learning, you may select any topic based on your preference or current skill level.</div>
+            </div>
+             <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">What is Rapid Fire mode?</div>
+                <div class="faq-answer">Rapid Fire mode is a timed practice session available for each topic. It consists of five questions designed to test your speed and conceptual understanding.</div>
+            </div>
+             <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">How many questions are included in Rapid Fire mode?</div>
+                <div class="faq-answer">Each Rapid Fire session contains five questions related to the selected topic.</div>
+            </div>
+             <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">Is there a time limit for Rapid Fire?</div>
+                <div class="faq-answer">Yes. Rapid Fire mode operates within a specified time limit. All five questions must be answered within the allotted time.</div>
+            </div>
+             <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">What happens if I do not complete all five Rapid Fire questions?</div>
+                <div class="faq-answer">If all five questions are not answered within the time limit, the score will not be recorded.</div>
+            </div>
+             <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">When will I see my Rapid Fire score?</div>
+                <div class="faq-answer">Your score will be displayed immediately after you successfully complete all five questions within the given time.</div>
+            </div>
+             <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">How many attempts do I get to submit my code?</div>
+                <div class="faq-answer">You are allowed a total of four submission attempts per visit for each topic.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">What happens during the first two coding attempts?</div>
+                <div class="faq-answer">During the first two attempts, you are expected to solve the problem independently without any assistance.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">Will I receive help if I cannot solve the coding problem?</div>
+                <div class="faq-answer">Yes. If your solution is incorrect after the first two attempts, a hint or reference solution will be provided in a pop-up window to guide you.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">What happens after I view the hint?</div>
+                <div class="faq-answer">After reviewing the hint, you will receive two additional submission attempts to solve the problem on your own.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">What happens if I still cannot solve the coding problem after four attempts?</div>
+                <div class="faq-answer">If the solution remains incorrect after all four attempts, you will be redirected to the topic page to review the learning material before trying again.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">Can I try the coding questions again later?</div>
+                <div class="faq-answer">Yes. You may revisit the topic and attempt the coding questions again in a new session.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">Why is there a limit on submission attempts?</div>
+                <div class="faq-answer">The submission limit encourages focused problem-solving, independent thinking, and effective use of hints while maintaining structured learning.</div>
+            </div>
+        </section>
+<hr><br>
+        <section id="contact">
+            <h2>Contact Support</h2>
+            <div class="contact-box">
+                <p>Email: support@letscode.com</p>
+                <p>Response Time: 24–48 hours</p>
+            </div>
+        </section>
+    </div>
+</div>
+<script>
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+function toggleFAQ(element) {
+    const answer = element.nextElementSibling;
+    answer.style.display = answer.style.display === "block" ? "none" : "block";
+}
+</script>
+</body>
+</html>
